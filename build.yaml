@@ -18,6 +18,5 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-include:
-  - board: nice_nano_v2
-    shield: two_percent_milk
+board: [ "nice_nano_v2" ]
+shield: [ "lapka_left", "lapka_right" ]
