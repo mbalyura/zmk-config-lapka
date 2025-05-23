@@ -4,7 +4,7 @@
 	col-offset = <18>;
 };
 
-&kscan0 {
+&default_kscan {
 	input-gpios
 		= <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Y
 		, <&pro_micro  4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // U

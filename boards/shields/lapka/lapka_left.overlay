@@ -1,6 +1,6 @@
 #include "lapka.dtsi"
 
-&kscan0 {
+&default_kscan {
 	input-gpios
 		= <&pro_micro 1  (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Q
 		, <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // W
