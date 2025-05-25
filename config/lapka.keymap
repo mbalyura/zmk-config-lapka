@@ -63,14 +63,14 @@
             label = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-            ignored-key-positions = <1>;
+            ignored-key-positions = <13>;
         };
         tabber: tabber {
             compatible = "zmk,behavior-tri-state";
             label = "TABBER";
             #binding-cells = <0>;
             bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
-            ignored-key-positions = <1>;
+            ignored-key-positions = <13>;
         };
     };
 
