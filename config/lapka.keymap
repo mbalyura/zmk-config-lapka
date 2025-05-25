@@ -58,6 +58,20 @@
             hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
+            ignored-key-positions = <1>;
+        };
+        tabber: tabber {
+            compatible = "zmk,behavior-tri-state";
+            label = "TABBER";
+            #binding-cells = <0>;
+            bindings = <&kt LCTRL>, <&kp TAB>, <&kt LCTRL>;
+            ignored-key-positions = <1>;
+        };
     };
 
     keymap {
@@ -75,9 +89,9 @@
 
         navigation_layer {
             bindings = <
-&kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &kp LC(G)         /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END           &kp LC(SEMI)
+&kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &swapper          /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END           &kp LC(SEMI)
 &kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)         /* | */        &kp PG_DN      &kp LEFT           &kp DOWN        &kp RIGHT         &kp LC(O)
-&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)          &kp LC(B)         /* | */        &kp LC(K)      &kt LC(M)          &kp LC(COMMA)   &kp LC(PERIOD)    &kp LC(SLASH)
+&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)          &tabber           /* | */        &kp LC(K)      &kt LC(M)          &kp LC(COMMA)   &kp LC(PERIOD)    &kp LC(SLASH)
                             /* - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                             &trans           &trans             &trans            /* | */        &trans         &trans             &trans
             >;
