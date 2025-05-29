@@ -1,3 +1,5 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+
 / {
 	chosen {
 		zmk,kscan = &default_kscan;
@@ -10,6 +12,7 @@
 	};
 
 	default_transform: keymap_transform_0 {
+		compatible = "zmk,matrix-transform";
 		columns = <36>;
 		rows = <1>;
 		map = <
