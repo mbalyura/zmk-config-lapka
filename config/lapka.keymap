@@ -83,17 +83,17 @@
 &hml LGUI A    &hml LALT R  &hml LCTRL S    &hml LSHIFT T       &kp D             /* | */        &kp H          &hmr LSHIFT N      &hmr LCTRL E   &hmr LALT I    &hmr LGUI O
 &kp Z          &kp X        &kp C            &kp V              &kp B             /* | */        &kp K          &kp M              &kp COMMA      &kp DOT        &kp FSLH
                             /* - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                            &kp DEL          &lt NAV ESC        &kp SPACE         /* | */        &lt NUM TAB    &lt SYM ENTER      &kp BSPC
+                            &kp BSPC          &lt NAV ESC       &kp SPACE         /* | */        &lt NUM TAB    &lt SYM ENTER      &kp DEL
             >;
         };
 
         navigation_layer {
             bindings = <
 &kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &kp LC(G)          /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END           &kp LC(SEMI)
-&kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)         /* | */        &kp PG_DN      &kp LEFT           &kp DOWN        &kp RIGHT         &kp LC(O)
-&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)          &swapper           /* | */        &kp LC(K)      &kt LC(M)          &kp LC(COMMA)   &kp LC(PERIOD)    &kp LC(SLASH)
+&kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)          /* | */        &kp PG_DN      &kp K_MENU         &kp DOWN        &kp RIGHT         &kp LC(O)
+&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)          &swapper           /* | */        &kp LC(K)      &kt LEFT           &kp LC(COMMA)   &kp LC(PERIOD)    &kp LC(SLASH)
                             /* - - - - - - - - - - - - - -- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                            &trans           &trans             &trans            /* | */        &trans         &trans             &trans
+                            &trans           &trans             &trans            /* | */         &trans         &trans             &trans
             >;
         };
 
