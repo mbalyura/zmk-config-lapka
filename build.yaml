@@ -18,5 +18,14 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
-board: [ "nice_nano_v2" ]
-shield: [ "lapka_left", "lapka_right", "settings_reset" ]
+# board: [ "nice_nano_v2" ]
+# shield: [ "lapka_left", "lapka_right", "settings_reset" ]
+
+include:
+  - board: nice_nano_v2
+    shield: lapka_left
+  - board: nice_nano_v2
+    shield: lapka_right
+    snippet: studio-rpc-usb-uart
+  - board: nice_nano_v2
+    shield: settings_reset
