@@ -1,4 +1,4 @@
-if SHIELD_LAPKA_LEFT
+if SHIELD_SEAGULL_DONGLE
 
 config ZMK_KEYBOARD_NAME
 	default "Lapka"
@@ -9,9 +9,18 @@ config ZMK_SPLIT_BLE_ROLE_CENTRAL
 config ZMK_USB
 	default y
 
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+  default 2
+
+config BT_MAX_CONN
+  default 6
+
+config BT_MAX_PAIRED
+  default 6
+
 endif
 
-if SHIELD_LAPKA_LEFT || SHIELD_LAPKA_RIGHT
+if SHIELD_LAPKA_LEFT || SHIELD_LAPKA_RIGHT || SHIELD_SEAGULL_DONGLE
 
 config ZMK_SPLIT
 	default y
