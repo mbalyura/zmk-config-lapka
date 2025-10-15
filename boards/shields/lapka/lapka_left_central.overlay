@@ -1,4 +1,11 @@
 #include "lapka.dtsi"
+#include "lapka-kscan.dtsi"
+
+/ {
+    chosen {
+        zmk,kscan = &default_kscan;
+    };
+};
 
 &default_kscan {
 	input-gpios

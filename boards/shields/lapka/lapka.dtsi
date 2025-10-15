@@ -1,14 +1,9 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "lapka-layouts.dtsi"
 
 / {
 	chosen {
-		zmk,kscan = &default_kscan;
-		zmk,matrix_transform = &default_transform;
-	};
-
-	default_kscan: kscan {
-		compatible = "zmk,kscan-gpio-direct";
-		wakeup-source;
+		zmk,physical-layout = &default_layout;
 	};
 
 	default_transform: keymap_transform_0 {
