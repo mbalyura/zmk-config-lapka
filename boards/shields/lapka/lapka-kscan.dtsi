@@ -1,0 +1,6 @@
+/ {
+	default_kscan: kscan {
+		compatible = "zmk,kscan-gpio-direct";
+		wakeup-source;
+	};
+};
