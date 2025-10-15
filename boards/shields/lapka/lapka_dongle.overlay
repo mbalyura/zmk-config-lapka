@@ -1,0 +1,17 @@
+#include <dt-bindings/zmk/matrix_transform.h>
+#include "lapka-layouts.dtsi"
+#include "lapka-transform.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &default_layout;
+        zmk,kscan = &mock_kscan;
+    };
+
+    mock_kscan: mock_kscan_0 {
+        compatible = "zmk,kscan-mock";
+        columns = <0>;
+        rows = <0>;
+        events = <0>;
+    };
+};
