@@ -84,6 +84,10 @@
 &kp Z          &kp X        &kp C            &kp V              &kp B             /* | */        &kp K          &kp M              &kp COMMA        &kp DOT           &kp SLASH
                             /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                             &kp BSPC          &lt NAV ESC       &kp SPACE         /* | */        &lt NUM TAB    &lt SYM ENTER      &kp DEL
+
+&kp A  &kp B  &kp C  &kp D
+&kp E  &kp F  &kp G  &kp H
+                     &kp I &kp J
             >;
         };
 
