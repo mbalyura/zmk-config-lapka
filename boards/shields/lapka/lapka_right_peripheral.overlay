@@ -1,6 +1,6 @@
 #include "lapka.dtsi"
 
-&default_transform {
+&lapka_transform {
 	col-offset = <18>;
 };
 

@@ -1,6 +1,9 @@
 config SHIELD_LAPKA_DONGLE
 	def_bool $(shields_list_contains,lapka_dongle)
 
+config SHIELD_LAPKA_DONGLE_PNCATEHO
+	def_bool $(shields_list_contains,lapka_dongle_pncateho)
+
 config SHIELD_LAPKA_LEFT_CENTRAL
 	def_bool $(shields_list_contains,lapka_left_central)
 

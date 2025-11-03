@@ -5,7 +5,7 @@
 
 / {
 	chosen {
-		zmk,physical-layout = &default_layout;
+		zmk,physical-layout = &lapka_pncateho_layout;
 		zmk,kscan = &default_kscan;
 	};
 };
