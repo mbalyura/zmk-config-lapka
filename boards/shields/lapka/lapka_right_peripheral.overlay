@@ -4,6 +4,10 @@
 	col-offset = <18>;
 };
 
+&lapka_pncateho_transform {
+	col-offset = <18>;
+};
+
 &default_kscan {
 	input-gpios
 		= <&pro_micro  2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)> // Y  // J
