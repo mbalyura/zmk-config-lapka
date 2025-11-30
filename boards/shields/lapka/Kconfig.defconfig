@@ -55,4 +55,10 @@ config ZMK_SPLIT
 config ZMK_BLE
     default y
 
+config BT_CTLR_TX_PWR_PLUS_8
+    default y
+
+config PM_DEVICE
+    default y
+
 endif
