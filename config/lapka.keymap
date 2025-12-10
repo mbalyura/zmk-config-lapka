@@ -34,6 +34,43 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
+        ctrl_c: mod_morph_ctrl_c {
+            compatible = "zmk,behavior-mod-morph";
+            mods = <(MOD_LCTL)>;
+            bindings = <&kp C>;
+        };
+
+        ctrl_shift_c: mod_morph_ctrl_shift_c {
+            compatible = "zmk,behavior-mod-morph";
+            mods = <(MOD_LCTL | MOD_LSFT)>;
+            bindings = <&kp C>;
+        };
+        ctrl_copy: hold_tap_ctrl_copy {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&ctrl_c>, <&ctrl_shift_c>;
+        };
+
+        ctrl_v: mod_morph_ctrl_v {
+            compatible = "zmk,behavior-mod-morph";
+            mods = <(MOD_LCTL)>;
+            bindings = <&kp V>;
+        };
+        ctrl_shift_v: mod_morph_ctrl_shift_v {
+            compatible = "zmk,behavior-mod-morph";
+            mods = <(MOD_LCTL | MOD_LSFT)>;
+            bindings = <&kp V>;
+        };
+        ctrl_paste: hold_tap_ctrl_copy {
+            compatible = "zmk,behavior-hold-tap";
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "hold-preferred";
+            bindings = <&ctrl_v>, <&ctrl_shift_v>;
+        };
+
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM Left";
@@ -58,6 +95,7 @@
             hold-trigger-key-positions = <LEFT_KEYS LEFT_THUMBS>; // List of keys on the left side of the keyboard
             hold-trigger-on-release;
         };
+
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";
             label = "SWAPPER";
@@ -83,21 +121,26 @@
 &hml LGUI A    &hml LALT R  &hml LCTRL S     &hml LSHIFT T      &kp D             /* | */        &kp H          &hmr LSHIFT N      &hmr LCTRL E     &hmr LALT I       &hmr LGUI O
 &kp Z          &kp X        &kp C            &kp V              &kp B             /* | */        &kp K          &kp M              &kp COMMA        &kp DOT           &mt RALT SLASH
                             /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
-                            &kp BSPC          &lt NAV ESC       &kp SPACE         /* | */        &lt NUM TAB    &lt SYM ENTER      &kp DEL
+                            &kp BSPC         &lt NAV ESC        &kp SPACE         /* | */        &lt NUM TAB    &lt SYM ENTER      &kp DEL
 
-                                                                    &kp A    &kp B    &kp C    &kp D
-                                                                    &kp E    &kp F    &kp G    &kp H
-                                                                                      &kp I    &kp J
+                                                                &kp A       &kp B       &kp C         &kp D
+                                                                &kp E       &kp F       &kp G         &kp H
+                                                                                        &lt SYM ENTER &lt NAV ESC
             >;
         };
 
         navigation_layer {
             bindings = <
-&kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
+&kp LC(Q)     &ht LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
 &kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)          /* | */        &kp PG_DN      &kp LEFT           &kp DOWN        &kp RIGHT          &kp LC(O)
-&kp LC(Z)     &kp LC(X)     &kp LC(C)        &kp LC(V)          &swapper           /* | */        &kp LC(K)      &kt LC(M)          &kp K_CONTEXT_MENU &kp LC(PERIOD)  &kp LC(SLASH)
+&kp LC(Z)     &kp LC(X)     &ctrl_copy       &ctrl_paste        &swapper           /* | */        &kp LC(K)      &kt LC(M)          &kp K_CONTEXT_MENU &kp LC(PERIOD)  &kp LC(SLASH)
                             /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                             &trans           &trans             &trans             /* | */        &trans         &trans             &trans
+
+                                                              &kp HOME       &kp UP       &kp END         &trans
+                                                              &kp LEFT       &kp DOWN     &kp RIGHT       &trans
+                                                                                          &lt SYM ENTER   &lt NAV ESC
+
             >;
         };
 
