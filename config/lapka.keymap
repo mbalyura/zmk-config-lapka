@@ -34,15 +34,17 @@
     combos { compatible = "zmk,combos"; };
 
     behaviors {
+        // magic copy-paste
         ctrl_c: mod_morph_ctrl_c {
             compatible = "zmk,behavior-mod-morph";
             mods = <(MOD_LCTL)>;
+            #binding-cells = <0>;
             bindings = <&kp C>;
         };
-
         ctrl_shift_c: mod_morph_ctrl_shift_c {
             compatible = "zmk,behavior-mod-morph";
             mods = <(MOD_LCTL | MOD_LSFT)>;
+            #binding-cells = <0>;
             bindings = <&kp C>;
         };
         ctrl_copy: hold_tap_ctrl_copy {
@@ -50,27 +52,32 @@
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "hold-preferred";
+            #binding-cells = <2>;
             bindings = <&ctrl_c>, <&ctrl_shift_c>;
         };
 
         ctrl_v: mod_morph_ctrl_v {
             compatible = "zmk,behavior-mod-morph";
             mods = <(MOD_LCTL)>;
+            #binding-cells = <0>;
             bindings = <&kp V>;
         };
         ctrl_shift_v: mod_morph_ctrl_shift_v {
             compatible = "zmk,behavior-mod-morph";
             mods = <(MOD_LCTL | MOD_LSFT)>;
+            #binding-cells = <0>;
             bindings = <&kp V>;
         };
-        ctrl_paste: hold_tap_ctrl_copy {
+        ctrl_paste: hold_tap_ctrl_paste {
             compatible = "zmk,behavior-hold-tap";
             tapping-term-ms = <200>;
             quick_tap_ms = <0>;
             flavor = "hold-preferred";
+            #binding-cells = <2>;
             bindings = <&ctrl_v>, <&ctrl_shift_v>;
         };
 
+        // home row mods
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM Left";
@@ -131,7 +138,7 @@
 
         navigation_layer {
             bindings = <
-&kp LC(Q)     &ht LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
+&kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
 &kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)          /* | */        &kp PG_DN      &kp LEFT           &kp DOWN        &kp RIGHT          &kp LC(O)
 &kp LC(Z)     &kp LC(X)     &ctrl_copy       &ctrl_paste        &swapper           /* | */        &kp LC(K)      &kt LC(M)          &kp K_CONTEXT_MENU &kp LC(PERIOD)  &kp LC(SLASH)
                             /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
