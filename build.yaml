@@ -1,31 +1,31 @@
 include:
   # Lapka Dongle (optional)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: lapka_dongle
     snippet: studio-rpc-usb-uart
     artifact-name: lapka-dongle
 
   # Lapka PNCATENO Dongle (macropad as a dongle)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: lapka_dongle_pncateho
     snippet: studio-rpc-usb-uart
     artifact-name: lapka-dongle-pncateho
 
   # Lapka left can either be a central (no dongle) or peripheral (with dongle)
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: lapka_left_central
     snippet: studio-rpc-usb-uart
     artifact-name: lapka-left-central
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: lapka_left_peripheral
     artifact-name: lapka-left-peripheral
 
   # Lapka right will always be a peripheral
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: lapka_right_peripheral
     artifact-name: lapka-right-peripheral
 
   # Settings Reset
-  - board: nice_nano_v2
+  - board: nice_nano
     shield: settings_reset
     artifact-name: settings-reset
