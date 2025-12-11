@@ -33,44 +33,42 @@
 / {
     combos { compatible = "zmk,combos"; };
 
+    // macros {
+    //     ctrl_c: ctrl_c {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&kp LCTRL &kp C>;
+    //     };
+
+    //     ctrl_shift_c: ctrl_shift_c {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&kp LCTRL &kp LSHFT &kp C>;
+    //     };
+
+    //     ctrl_v: ctrl_v {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&kp LCTRL &kp C>;
+    //     };
+
+    //     ctrl_shift_v: ctrl_shift_v {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&kp LCTRL &kp LSHFT &kp V>;
+    //     };
+    // };
+
     behaviors {
-        ctrl_c: mod_morph_ctrl_c {
-            compatible = "zmk,behavior-mod-morph";
-            mods = <(MOD_LCTL)>;
-            bindings = <&kp C>;
-        };
-
-        ctrl_shift_c: mod_morph_ctrl_shift_c {
-            compatible = "zmk,behavior-mod-morph";
-            mods = <(MOD_LCTL | MOD_LSFT)>;
-            bindings = <&kp C>;
-        };
-        ctrl_copy: hold_tap_ctrl_copy {
+        ght: generic_hold_tap {
             compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&ctrl_c>, <&ctrl_shift_c>;
+            bindings = <&kp>, <&kp>;
         };
 
-        ctrl_v: mod_morph_ctrl_v {
-            compatible = "zmk,behavior-mod-morph";
-            mods = <(MOD_LCTL)>;
-            bindings = <&kp V>;
-        };
-        ctrl_shift_v: mod_morph_ctrl_shift_v {
-            compatible = "zmk,behavior-mod-morph";
-            mods = <(MOD_LCTL | MOD_LSFT)>;
-            bindings = <&kp V>;
-        };
-        ctrl_paste: hold_tap_ctrl_copy {
-            compatible = "zmk,behavior-hold-tap";
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
-            flavor = "hold-preferred";
-            bindings = <&ctrl_v>, <&ctrl_shift_v>;
-        };
-
+        // home row mods
         hml: home_row_mod_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HRM Left";
@@ -131,9 +129,9 @@
 
         navigation_layer {
             bindings = <
-&kp LC(Q)     &ht LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
+&kp LC(Q)     &kp LC(W)     &kp LC(F)        &kp LC(P)          &tabber            /* | */        &kp PG_UP      &kp HOME           &kp UP          &kp END            &kp LC(SEMI)
 &kp LGUI      &sk LALT      &sk LCTRL        &sk LSHIFT         &kp LC(D)          /* | */        &kp PG_DN      &kp LEFT           &kp DOWN        &kp RIGHT          &kp LC(O)
-&kp LC(Z)     &kp LC(X)     &ctrl_copy       &ctrl_paste        &swapper           /* | */        &kp LC(K)      &kt LC(M)          &kp K_CONTEXT_MENU &kp LC(PERIOD)  &kp LC(SLASH)
+&kp LC(Z)     &kp LC(X)     &ght LS(LC(C)) LC(C) &ght LS(LC(V)) LC(V) &swapper     /* | */        &kp LC(K)      &kt LC(M)          &kp K_CONTEXT_MENU &kp LC(PERIOD)  &kp LC(SLASH)
                             /* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
                             &trans           &trans             &trans             /* | */        &trans         &trans             &trans
 
