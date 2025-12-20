@@ -5,6 +5,12 @@ include:
     snippet: studio-rpc-usb-uart
     artifact-name: lapka-dongle
 
+  # Lapka Dongle with Display (optional)
+  - board: nice_nano
+    shield: lapka_dongle_display
+    snippet: studio-rpc-usb-uart
+    artifact-name: lapka-dongle-display
+
   # Lapka PNCATENO Dongle (macropad as a dongle)
   - board: nice_nano
     shield: lapka_dongle_pncateho
