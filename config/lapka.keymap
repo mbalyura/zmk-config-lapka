@@ -31,33 +31,19 @@
 };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
 
-    // macros {
-    //     ctrl_c: ctrl_c {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp LCTRL &kp C>;
-    //     };
+        cmb_bspc {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <1 2>;
+        };
 
-    //     ctrl_shift_c: ctrl_shift_c {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp LCTRL &kp LSHFT &kp C>;
-    //     };
-
-    //     ctrl_v: ctrl_v {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp LCTRL &kp C>;
-    //     };
-
-    //     ctrl_shift_v: ctrl_shift_v {
-    //         compatible = "zmk,behavior-macro";
-    //         #binding-cells = <0>;
-    //         bindings = <&kp LCTRL &kp LSHFT &kp V>;
-    //     };
-    // };
+        cmb_del {
+            bindings = <&kp DELETE>;
+            key-positions = <2 3>;
+        };
+    };
 
     behaviors {
         ght: generic_hold_tap {
